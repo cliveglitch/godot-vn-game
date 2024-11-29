@@ -1,0 +1,163 @@
+[gd_scene load_steps=16 format=3 uid="uid://b2m3mcu2lhu60"]
+
+[ext_resource type="FontFile" uid="uid://dy81c5vniq3k6" path="res://Assets/Fonts/IBMPlexSans-Medium.ttf" id="1_1me42"]
+[ext_resource type="Script" path="res://Scripts/Console Command/console.gd" id="1_jupts"]
+[ext_resource type="FontFile" uid="uid://fi37v582a6i0" path="res://Assets/Fonts/IBMPlexSans-Bold.ttf" id="3_klqi2"]
+[ext_resource type="FontFile" uid="uid://vuswfim7l33m" path="res://Assets/Fonts/IBMPlexSans-BoldItalic.ttf" id="4_dyw6i"]
+[ext_resource type="FontFile" uid="uid://hsqsblboowp1" path="res://Assets/Fonts/IBMPlexSans-MediumItalic.ttf" id="5_l13v0"]
+[ext_resource type="Script" path="res://Scripts/Console Command/basic_commands.gd" id="6_4ud15"]
+[ext_resource type="Script" path="res://Scripts/Console Command/command_handler.gd" id="6_dn2us"]
+[ext_resource type="Script" path="res://Scripts/Console Command/command.gd" id="8_xjjt5"]
+[ext_resource type="Script" path="res://Scripts/Console Command/command_group.gd" id="9_6gywj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_libsy"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 0.588235)
+
+[sub_resource type="Theme" id="Theme_qlqkq"]
+default_font = ExtResource("1_1me42")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_libsy")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3wjho"]
+content_margin_left = 12.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 12.0
+bg_color = Color(0.12549, 0.12549, 0.12549, 0.588235)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="Theme" id="Theme_83gfl"]
+RichTextLabel/fonts/bold_font = ExtResource("3_klqi2")
+RichTextLabel/fonts/bold_italics_font = ExtResource("4_dyw6i")
+RichTextLabel/fonts/italics_font = ExtResource("5_l13v0")
+RichTextLabel/styles/normal = SubResource("StyleBoxFlat_3wjho")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gogfu"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+bg_color = Color(0.12549, 0.12549, 0.12549, 0.588235)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.625597, 0.625597, 0.625597, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="Theme" id="Theme_6j113"]
+LineEdit/constants/outline_size = 0
+LineEdit/styles/normal = SubResource("StyleBoxFlat_gogfu")
+
+[node name="Console" type="PanelContainer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_qlqkq")
+script = ExtResource("1_jupts")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Display" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = SubResource("Theme_83gfl")
+bbcode_enabled = true
+scroll_following = true
+
+[node name="InputBar" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_6j113")
+placeholder_text = "Enter command..."
+max_length = 100
+caret_blink = true
+
+[node name="BasicCommands" type="Node" parent="." node_paths=PackedStringArray("console")]
+script = ExtResource("6_4ud15")
+console = NodePath("..")
+
+[node name="BasicCommandHandler" type="Node" parent="." node_paths=PackedStringArray("node_with_funcions")]
+script = ExtResource("6_dn2us")
+node_with_funcions = NodePath("../BasicCommands")
+
+[node name="echo" type="Node" parent="BasicCommandHandler"]
+script = ExtResource("8_xjjt5")
+command_name = "echo"
+function_name = "echo_command"
+description = "Prints text in the console."
+arguments = Array[String](["text"])
+argument_types = Array[int]([0])
+
+[node name="clear" type="Node" parent="BasicCommandHandler"]
+script = ExtResource("8_xjjt5")
+command_name = "clear"
+function_name = "clear_command"
+description = "Clears the console."
+
+[node name="help" type="Node" parent="BasicCommandHandler"]
+script = ExtResource("8_xjjt5")
+command_name = "help"
+function_name = "help_command"
+description = "Shows all commands with description."
+
+[node name="test" type="Node" parent="BasicCommandHandler"]
+script = ExtResource("8_xjjt5")
+command_name = "test"
+function_name = "test_command"
+description = "Test command."
+arguments = Array[String](["text", "x", "y"])
+argument_types = Array[int]([0, 2, 3])
+
+[node name="Test Group" type="Node" parent="BasicCommandHandler"]
+script = ExtResource("9_6gywj")
+group_name = "testg"
+
+[node name="Test Group" type="Node" parent="BasicCommandHandler/Test Group"]
+script = ExtResource("9_6gywj")
+group_name = "testg"
+
+[node name="test" type="Node" parent="BasicCommandHandler/Test Group/Test Group"]
+script = ExtResource("8_xjjt5")
+command_name = "test"
+function_name = "test_command"
+description = "Test command."
+arguments = Array[String](["text", "x", "y"])
+argument_types = Array[int]([0, 2, 3])
+
+[node name="echo" type="Node" parent="BasicCommandHandler/Test Group"]
+script = ExtResource("8_xjjt5")
+command_name = "echo"
+function_name = "echo_command"
+description = "Prints text in the console."
+arguments = Array[String](["text"])
+argument_types = Array[int]([0])
+
+[node name="test" type="Node" parent="BasicCommandHandler/Test Group"]
+script = ExtResource("8_xjjt5")
+command_name = "test"
+function_name = "test_command"
+description = "Test command."
+arguments = Array[String](["text", "x", "y"])
+argument_types = Array[int]([0, 2, 3])
+
+[connection signal="text_changed" from="VBoxContainer/InputBar" to="." method="_on_input_bar_text_changed"]
+[connection signal="text_submitted" from="VBoxContainer/InputBar" to="." method="_on_command_submitted"]

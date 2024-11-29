@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdfyty2adjwap"]
+
+[ext_resource type="Script" path="res://Scripts/Console Command/command_group.gd" id="1_5w14g"]
+
+[node name="CommandGroup" type="Node"]
+script = ExtResource("1_5w14g")

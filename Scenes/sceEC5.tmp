@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://co0e7yq1bow7e"]
+
+[ext_resource type="PackedScene" uid="uid://dblv5cru1jt4f" path="res://Scenes/krauss.tscn" id="1_fxe1e"]
+[ext_resource type="Script" path="res://Scenes/scene.gd" id="1_q421a"]
+
+[node name="Scene" type="Node2D"]
+script = ExtResource("1_q421a")
+
+[node name="Krauss" parent="." instance=ExtResource("1_fxe1e")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, -324)
+
+[node name="Talk" type="Button" parent="."]
+offset_left = -522.0
+offset_top = -603.0
+offset_right = -232.0
+offset_bottom = -496.0
+theme_override_font_sizes/font_size = 72
+text = "Talk"
+
+[node name="Select Pose" type="OptionButton" parent="."]
+offset_left = 118.0
+offset_top = -603.0
+offset_right = 544.0
+offset_bottom = -496.0
+theme_override_font_sizes/font_size = 72
+alignment = 1
+
+[node name="Select Expression" type="OptionButton" parent="."]
+offset_left = 118.0
+offset_top = -483.0
+offset_right = 544.0
+offset_bottom = -376.0
+theme_override_font_sizes/font_size = 72
+alignment = 1
+
+[connection signal="pressed" from="Talk" to="." method="_on_talk_pressed"]
+[connection signal="pressed" from="Talk" to="Krauss" method="_on_talk_pressed"]
+[connection signal="item_selected" from="Select Pose" to="." method="_on_select_pose_item_selected"]
+[connection signal="item_selected" from="Select Expression" to="." method="_on_select_expression_item_selected"]

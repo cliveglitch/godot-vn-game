@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl8rtd48x0k1o"]
+
+[ext_resource type="Script" path="res://Scripts/test_character_scene.gd" id="1_gq55u"]
+[ext_resource type="PackedScene" uid="uid://cd88df4gu5f5i" path="res://Scenes/Characters/krauss.tscn" id="2_sktyh"]
+[ext_resource type="PackedScene" uid="uid://c2f13b3i555ox" path="res://Scenes/Characters/natsuhi.tscn" id="3_tbk3f"]
+[ext_resource type="PackedScene" uid="uid://b2m3mcu2lhu60" path="res://Scenes/console.tscn" id="4_ptwsg"]
+
+[node name="Test Character Scene" type="Node2D"]
+script = ExtResource("1_gq55u")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(961, -541)
+
+[node name="Krauss" parent="." instance=ExtResource("2_sktyh")]
+position = Vector2(1503, -520)
+scale = Vector2(0.9, 0.9)
+
+[node name="Natsuhi" parent="." instance=ExtResource("3_tbk3f")]
+position = Vector2(1087, -516)
+scale = Vector2(0.9, 0.9)
+
+[node name="ConsoleCanvas" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="ConsoleCanvas"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Console" parent="ConsoleCanvas/MarginContainer" instance=ExtResource("4_ptwsg")]
+layout_mode = 2

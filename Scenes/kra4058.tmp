@@ -1,0 +1,191 @@
+[gd_scene load_steps=32 format=3 uid="uid://dblv5cru1jt4f"]
+
+[ext_resource type="Texture2D" uid="uid://blc5imbfwocbf" path="res://Assets/Sprites/Krauss Ushiromiya/Pose A/Krauss_console_a_(10).webp" id="1_bshnk"]
+[ext_resource type="Texture2D" uid="uid://cgxcficvw4mr7" path="res://Assets/Sprites/Krauss Ushiromiya/Pose A/Krauss_console_a_(2).webp" id="1_o6bix"]
+[ext_resource type="Script" path="res://Scenes/krauss.gd" id="1_w4upx"]
+[ext_resource type="Texture2D" uid="uid://dl2bmpla543hq" path="res://Assets/Sprites/Krauss Ushiromiya/Pose A/Krauss_console_a_(3).webp" id="2_54h43"]
+[ext_resource type="Texture2D" uid="uid://i04f26qq1v8n" path="res://Assets/Sprites/Krauss Ushiromiya/Pose A/Krauss_console_a_(11).webp" id="2_t6ec0"]
+[ext_resource type="Texture2D" uid="uid://bbak4n0sem0c8" path="res://Assets/Sprites/Krauss Ushiromiya/Pose A/Krauss_console_a_(12).webp" id="3_onuxm"]
+[ext_resource type="Texture2D" uid="uid://d1u00yvbayer8" path="res://Assets/Sprites/Krauss Ushiromiya/Pose A/Krauss_console_a_(4).webp" id="3_ucdpi"]
+[ext_resource type="Texture2D" uid="uid://ro4uedpheo8t" path="res://Assets/Sprites/Krauss Ushiromiya/Pose B/Krauss_console_b_(2).webp" id="4_q27lk"]
+[ext_resource type="Texture2D" uid="uid://c3ljoonkf505w" path="res://Assets/Sprites/Krauss Ushiromiya/Pose A/Krauss_console_a_(6).webp" id="4_xku5y"]
+[ext_resource type="Texture2D" uid="uid://ciew42yahknov" path="res://Assets/Sprites/Krauss Ushiromiya/Pose B/Krauss_console_b_(3).webp" id="5_twlif"]
+[ext_resource type="Texture2D" uid="uid://d1n20oojs55b5" path="res://Assets/Sprites/Krauss Ushiromiya/Pose A/Krauss_console_a_(7).webp" id="5_ulmn5"]
+[ext_resource type="Texture2D" uid="uid://bvdrovj24841n" path="res://Assets/Sprites/Krauss Ushiromiya/Pose A/Krauss_console_a_(8).webp" id="6_ankry"]
+[ext_resource type="Texture2D" uid="uid://mfvvmph1c4p7" path="res://Assets/Sprites/Krauss Ushiromiya/Pose B/Krauss_console_b_(4).webp" id="6_s2dc6"]
+[ext_resource type="Texture2D" uid="uid://0hpktifphupw" path="res://Assets/Sprites/Krauss Ushiromiya/Pose B/Krauss_console_b_(10).webp" id="10_u7jak"]
+[ext_resource type="Texture2D" uid="uid://dbxlsjmla713t" path="res://Assets/Sprites/Krauss Ushiromiya/Pose B/Krauss_console_b_(11).webp" id="11_58c1f"]
+[ext_resource type="Texture2D" uid="uid://bawrtroqryl5n" path="res://Assets/Sprites/Krauss Ushiromiya/Pose B/Krauss_console_b_(12).webp" id="12_o60s2"]
+[ext_resource type="Texture2D" uid="uid://g2las1ph305o" path="res://Assets/Sprites/Krauss Ushiromiya/Pose B/Krauss_console_b_(6).webp" id="16_5gv6j"]
+[ext_resource type="Texture2D" uid="uid://drhhh0aowux10" path="res://Assets/Sprites/Krauss Ushiromiya/Pose B/Krauss_console_b_(7).webp" id="17_wv2sv"]
+[ext_resource type="Texture2D" uid="uid://c15agpqwxn454" path="res://Assets/Sprites/Krauss Ushiromiya/Pose B/Krauss_console_b_(8).webp" id="18_mpc8i"]
+[ext_resource type="Texture2D" uid="uid://4bl7eiqnjr6v" path="res://Assets/Sprites/Krauss Ushiromiya/Pose C/Krauss_console_gun_(2).webp" id="19_8mqhg"]
+[ext_resource type="Texture2D" uid="uid://c7x8nfoy5ifvt" path="res://Assets/Sprites/Krauss Ushiromiya/Pose C/Krauss_console_gun_(10).webp" id="19_fdpa1"]
+[ext_resource type="Texture2D" uid="uid://6qn57ectf574" path="res://Assets/Sprites/Krauss Ushiromiya/Pose C/Krauss_console_gun_(3).webp" id="20_nw2j6"]
+[ext_resource type="Texture2D" uid="uid://dq6sg2cxwr547" path="res://Assets/Sprites/Krauss Ushiromiya/Pose C/Krauss_console_gun_(11).webp" id="20_yc177"]
+[ext_resource type="Texture2D" uid="uid://b1ipsfxtyj8bb" path="res://Assets/Sprites/Krauss Ushiromiya/Pose C/Krauss_console_gun_(12).webp" id="21_1n5tn"]
+[ext_resource type="Texture2D" uid="uid://b2gatbn3erkjv" path="res://Assets/Sprites/Krauss Ushiromiya/Pose C/Krauss_console_gun_(4).webp" id="21_gjmf5"]
+[ext_resource type="Texture2D" uid="uid://bb7vd8erqvye3" path="res://Assets/Sprites/Krauss Ushiromiya/Pose C/Krauss_console_gun_(6).webp" id="25_jwuxn"]
+[ext_resource type="Texture2D" uid="uid://2cyfpbm0e0n1" path="res://Assets/Sprites/Krauss Ushiromiya/Pose C/Krauss_console_gun_(7).webp" id="26_sava1"]
+[ext_resource type="Texture2D" uid="uid://bwqtsjgmwe11" path="res://Assets/Sprites/Krauss Ushiromiya/Pose C/Krauss_console_gun_(8).webp" id="27_of5wa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dv02o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bshnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_t6ec0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_onuxm")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o6bix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_54h43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ucdpi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xku5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ulmn5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ankry")
+}],
+"loop": true,
+"name": &"explaining",
+"speed": 7.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jbkol"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_u7jak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_58c1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_o60s2")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_q27lk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_twlif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s2dc6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_5gv6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wv2sv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_mpc8i")
+}],
+"loop": true,
+"name": &"explaining",
+"speed": 7.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3ferf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_fdpa1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_yc177")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1n5tn")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_8mqhg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_nw2j6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_gjmf5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_jwuxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_sava1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_of5wa")
+}],
+"loop": true,
+"name": &"explaining",
+"speed": 5.0
+}]
+
+[node name="Krauss" type="Node"]
+script = ExtResource("1_w4upx")
+
+[node name="Pose A" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -264)
+scale = Vector2(0.45, 0.45)
+sprite_frames = SubResource("SpriteFrames_dv02o")
+frame_progress = 0.479112
+
+[node name="Pose B" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -264)
+scale = Vector2(0.541, 0.541)
+sprite_frames = SubResource("SpriteFrames_jbkol")
+animation = &"explaining"
+frame_progress = 0.00781295
+
+[node name="Pose C" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -264)
+scale = Vector2(0.45, 0.45)
+sprite_frames = SubResource("SpriteFrames_3ferf")
+animation = &"angry"
+frame_progress = 0.281827
