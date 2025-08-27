@@ -41,9 +41,7 @@ func has_prefrix(prefix: String) -> bool:
 func get_word_with_unique_prefix(prefix: String):
 	var current_node = self.root
 	
-	## Start of the prefix in the Trie
 	for c in prefix:
-		## The prefix doesn't exist
 		if not current_node.children.has(c):
 			return null
 		current_node = current_node.children[c]
@@ -70,9 +68,7 @@ func get_word_with_unique_prefix(prefix: String):
 func get_all_words_with_prefix(prefix: String):
 	var current_node = self.root
 	
-	## Start of the prefix in the Trie
 	for c in prefix:
-		## No words in the Trie with that prefix
 		if not current_node.children.has(c):
 			return []
 		current_node = current_node.children[c]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=58 format=3 uid="uid://c2f13b3i555ox"]
 
-[ext_resource type="Script" path="res://Scripts/Character Sprites/character.gd" id="1_qcdw6"]
-[ext_resource type="Script" path="res://Scripts/Character Sprites/pose.gd" id="2_pd8t1"]
+[ext_resource type="Script" uid="uid://bf7kgfatr1cjx" path="res://Scripts/Character Sprites/character.gd" id="1_qcdw6"]
+[ext_resource type="Script" uid="uid://h10hmvfmfubs" path="res://Scripts/Character Sprites/pose.gd" id="2_pd8t1"]
 [ext_resource type="Texture2D" uid="uid://5a7tin0ic6y5" path="res://Assets/Sprites/Natsuhi Ushiromiya/Poses/nat_a11_nayamu2.png" id="3_7fag3"]
-[ext_resource type="Script" path="res://Scripts/Character Sprites/expression.gd" id="4_cr6au"]
+[ext_resource type="Script" uid="uid://mvq0aj07fppl" path="res://Scripts/Character Sprites/expression.gd" id="4_cr6au"]
 [ext_resource type="Texture2D" uid="uid://bamock2hle0nr" path="res://Assets/Sprites/Natsuhi Ushiromiya/Mouths/nat_a11_nayamu2.png" id="5_dqfa5"]
 [ext_resource type="Texture2D" uid="uid://cx1hqxthtprow" path="res://Assets/Sprites/Natsuhi Ushiromiya/Poses/nat_a11_ikari2.png" id="6_3anfn"]
 [ext_resource type="Texture2D" uid="uid://cflidc2xyb1pt" path="res://Assets/Sprites/Natsuhi Ushiromiya/Mouths/nat_a11_ikari2.png" id="7_d6m84"]

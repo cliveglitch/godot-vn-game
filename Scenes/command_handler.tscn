@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://fkqpc1e3los8"]
 
-[ext_resource type="Script" path="res://Scripts/Console Command/command_handler.gd" id="1_13juv"]
+[ext_resource type="Script" uid="uid://damoxob6c0pt5" path="res://Scripts/Console Command/command_handler.gd" id="1_13juv"]
 
 [node name="CommandHandler" type="Node"]
 script = ExtResource("1_13juv")

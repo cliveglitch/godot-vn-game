@@ -1,14 +1,14 @@
 [gd_scene load_steps=16 format=3 uid="uid://b2m3mcu2lhu60"]
 
 [ext_resource type="FontFile" uid="uid://dy81c5vniq3k6" path="res://Assets/Fonts/IBMPlexSans-Medium.ttf" id="1_1me42"]
-[ext_resource type="Script" path="res://Scripts/Console Command/console.gd" id="1_jupts"]
+[ext_resource type="Script" uid="uid://curpxufnbc0rx" path="res://Scripts/Console Command/console.gd" id="1_jupts"]
 [ext_resource type="FontFile" uid="uid://fi37v582a6i0" path="res://Assets/Fonts/IBMPlexSans-Bold.ttf" id="3_klqi2"]
 [ext_resource type="FontFile" uid="uid://vuswfim7l33m" path="res://Assets/Fonts/IBMPlexSans-BoldItalic.ttf" id="4_dyw6i"]
 [ext_resource type="FontFile" uid="uid://hsqsblboowp1" path="res://Assets/Fonts/IBMPlexSans-MediumItalic.ttf" id="5_l13v0"]
-[ext_resource type="Script" path="res://Scripts/Console Command/basic_commands.gd" id="6_4ud15"]
-[ext_resource type="Script" path="res://Scripts/Console Command/command_handler.gd" id="6_dn2us"]
-[ext_resource type="Script" path="res://Scripts/Console Command/command.gd" id="8_xjjt5"]
-[ext_resource type="Script" path="res://Scripts/Console Command/command_group.gd" id="9_6gywj"]
+[ext_resource type="Script" uid="uid://drqopna6pkuew" path="res://Scripts/Console Command/basic_commands.gd" id="6_4ud15"]
+[ext_resource type="Script" uid="uid://damoxob6c0pt5" path="res://Scripts/Console Command/command_handler.gd" id="6_dn2us"]
+[ext_resource type="Script" uid="uid://c7pwkdqy48h8o" path="res://Scripts/Console Command/command.gd" id="8_xjjt5"]
+[ext_resource type="Script" uid="uid://cvrctxo0u41mu" path="res://Scripts/Console Command/command_group.gd" id="9_6gywj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_libsy"]
 content_margin_left = 12.0

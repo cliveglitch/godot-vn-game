@@ -1,8 +1,8 @@
 [gd_scene load_steps=58 format=3 uid="uid://cd88df4gu5f5i"]
 
-[ext_resource type="Script" path="res://Scripts/Character Sprites/character.gd" id="1_qrig0"]
-[ext_resource type="Script" path="res://Scripts/Character Sprites/expression.gd" id="3_04k1d"]
-[ext_resource type="Script" path="res://Scripts/Character Sprites/pose.gd" id="20_nr21b"]
+[ext_resource type="Script" uid="uid://bf7kgfatr1cjx" path="res://Scripts/Character Sprites/character.gd" id="1_qrig0"]
+[ext_resource type="Script" uid="uid://mvq0aj07fppl" path="res://Scripts/Character Sprites/expression.gd" id="3_04k1d"]
+[ext_resource type="Script" uid="uid://h10hmvfmfubs" path="res://Scripts/Character Sprites/pose.gd" id="20_nr21b"]
 [ext_resource type="Texture2D" uid="uid://dlvrtm0x4ox2o" path="res://Assets/Sprites/Krauss Ushiromiya/Poses/cla_a11_defo1.png" id="32_jkrjq"]
 [ext_resource type="Texture2D" uid="uid://cmenvm76e77oj" path="res://Assets/Sprites/Krauss Ushiromiya/Mouths/cla_a11_defo1.png" id="33_s81xk"]
 [ext_resource type="Texture2D" uid="uid://jp0juuwcv884" path="res://Assets/Sprites/Krauss Ushiromiya/Poses/cla_a11_akuwarai1.png" id="34_h62dq"]

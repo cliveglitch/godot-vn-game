@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://dl8rtd48x0k1o"]
 
-[ext_resource type="Script" path="res://Scripts/test_character_scene.gd" id="1_gq55u"]
+[ext_resource type="Script" uid="uid://dp23fd7sbmqx2" path="res://Scripts/test_character_scene.gd" id="1_gq55u"]
 [ext_resource type="PackedScene" uid="uid://cd88df4gu5f5i" path="res://Scenes/Characters/krauss.tscn" id="2_sktyh"]
 [ext_resource type="PackedScene" uid="uid://c2f13b3i555ox" path="res://Scenes/Characters/natsuhi.tscn" id="3_tbk3f"]
 [ext_resource type="PackedScene" uid="uid://b2m3mcu2lhu60" path="res://Scenes/console.tscn" id="4_ptwsg"]
-[ext_resource type="Script" path="res://Scripts/Console Command/command_handler.gd" id="5_2nqas"]
-[ext_resource type="Script" path="res://Scripts/Console Command/command_group.gd" id="6_pwidf"]
-[ext_resource type="Script" path="res://Scripts/Console Command/command.gd" id="7_vblba"]
+[ext_resource type="Script" uid="uid://damoxob6c0pt5" path="res://Scripts/Console Command/command_handler.gd" id="5_2nqas"]
+[ext_resource type="Script" uid="uid://cvrctxo0u41mu" path="res://Scripts/Console Command/command_group.gd" id="6_pwidf"]
+[ext_resource type="Script" uid="uid://c7pwkdqy48h8o" path="res://Scripts/Console Command/command.gd" id="7_vblba"]
 
 [node name="Test Character Scene" type="Node2D"]
 script = ExtResource("1_gq55u")

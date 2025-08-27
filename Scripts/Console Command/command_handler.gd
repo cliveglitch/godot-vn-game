@@ -39,11 +39,7 @@ func run_command(command: Command, args: Array):
 	node_with_funcions.callv(command.function_name, args)
 
 ## Finds a Command Node from the console input string.
-## If the command isn't found then it returns null.
-## Returns an object with the command whether is null or not,
-## and a leftover string that contains the arguments to be later parsed
-## It also returns the command group if the input is correct but incomplete
-## So you can print it's help string as an error instead of just an error
+## The leftover string contains the arguments
 func get_command_from_string(input: String):
 	var split_input = input.split(" ", false, 1)
 	if not split_input.size() > 0:
@@ -102,8 +98,6 @@ func get_arguments_from_string(input: String) -> Array[String]:
 	return input_arguments
 
 ## Parse arguments to be ready when the command function runs.
-## Returns an object with the parsed "args" and a array of "errors".
-## The error array will be empty if there are none.
 func parse_arguments(command: Command, input_args: Array[String]):
 	var parsed_args: Array = []
 	var errors: Array[String] = []
