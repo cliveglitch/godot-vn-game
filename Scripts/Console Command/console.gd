@@ -14,6 +14,8 @@ func _ready() -> void:
 		func(node: Node):
 			return node is CommandHandler
 	)
+	input_bar.keep_editing_on_text_submit = true
+	input_bar.caret_force_displayed = true
 	
 	_fill_command_trie()
 
@@ -39,6 +41,9 @@ func _on_command_submitted(input: String) -> void:
 		var command_handler = node as CommandHandler
 		
 		var command_leftover = command_handler.get_command_from_string(input)
+		if not command_leftover:
+			return
+			
 		command = command_leftover["command"]
 		var leftover: PackedStringArray = command_leftover["leftover"] 
 		
@@ -79,9 +84,12 @@ func _on_command_submitted(input: String) -> void:
 		
 	history.push(input)
 	input_bar.clear()
+	input_bar.call_deferred("grab_focus")
 
 func _input(event: InputEvent) -> void:
 	input_bar.caret_blink = false
+	input_bar.call_deferred("grab_focus")
+	
 	# Toggle Console
 	if event.is_action_pressed("open_console"):
 		self.visible = !self.visible
@@ -97,6 +105,8 @@ func _input(event: InputEvent) -> void:
 		if next_command:
 			input_bar.text = next_command
 			input_bar.caret_column = input_bar.text.length()
+	elif visible and event is not InputEventKey:
+		get_viewport().set_input_as_handled()
 	
 	input_bar.caret_blink = true
 

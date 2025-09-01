@@ -33,6 +33,10 @@ func _ready() -> void:
 	get_poses()
 	if poses.size() > 0:
 		refresh_pose()
+		if poses.has(currentPoseName):
+			change_pose_by_name(currentPoseName)
+		if currentPose.expressions.has(currentExpressionName):
+			change_expression_by_name(currentExpressionName)
 		if "Text" in Dialogic:
 			Dialogic.Text.text_finished.connect(_on_text_finished)
 	else:
@@ -61,6 +65,8 @@ func change_pose_by_name(pose_name: String) -> void:
 	currentPose = poses[pose_name]
 			
 func change_expression_by_name(expression_name: String) -> void:
+	if not currentPose.expressions.has(expression_name):
+		return
 	currentPose.currentExpression = currentPose.expressions[expression_name]
 	refresh_talking()
 

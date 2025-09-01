@@ -1,8 +1,11 @@
-join Krauss left [animation="Slide From Left"]
+[background arg="res://Assets/Mkur_3af.webp" fade="0.0"]
+join Krauss leftmost [animation="Slide From Left"]
 Krauss: Hello, I'm gonna invest to the moon!
-join Natsuhi center [animation="Slide From Left" length="1.0" wait="true"]
-Natsuhi: No! No you will not darling! You already lost us too much money!
+update Krauss left [move_time="0.3"]
+join Natsuhi (Default) center [animation="Slide From Left" length="1.0" wait="true"]
+Natsuhi (Default): No! No you will not darling! You already lost us too much money!
 Krauss: To the mooooooooooon!
 leave Krauss [animation="Slide Out Up" length="1.0" wait="true"]
+update Natsuhi (Surprised) [animation="Bounce"]
 Natsuhi: Not again!
 leave Natsuhi [animation="Slide Out Up" length="0.3"]

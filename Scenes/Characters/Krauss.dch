@@ -15,7 +15,7 @@
 &"display_name": "Krauss",
 &"mirror": false,
 &"nicknames": [""],
-&"offset": Vector2(0, 0),
+&"offset": Vector2(0, 150),
 &"portraits": {
 "Default": {
 "export_overrides": {

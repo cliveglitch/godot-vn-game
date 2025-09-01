@@ -64,16 +64,19 @@ LineEdit/styles/normal = SubResource("StyleBoxFlat_gogfu")
 
 [node name="Console" type="PanelContainer"]
 visible = false
+z_index = 1000
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+focus_mode = 2
 theme = SubResource("Theme_qlqkq")
 script = ExtResource("1_jupts")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+focus_mode = 2
 theme_override_constants/separation = 12
 
 [node name="Display" type="RichTextLabel" parent="VBoxContainer"]
@@ -89,6 +92,7 @@ layout_mode = 2
 theme = SubResource("Theme_6j113")
 placeholder_text = "Enter command..."
 max_length = 100
+deselect_on_focus_loss_enabled = false
 caret_blink = true
 
 [node name="BasicCommands" type="Node" parent="." node_paths=PackedStringArray("console")]
@@ -159,5 +163,4 @@ description = "Test command."
 arguments = Array[String](["text", "x", "y"])
 argument_types = Array[int]([0, 2, 3])
 
-[connection signal="text_changed" from="VBoxContainer/InputBar" to="." method="_on_input_bar_text_changed"]
 [connection signal="text_submitted" from="VBoxContainer/InputBar" to="." method="_on_command_submitted"]

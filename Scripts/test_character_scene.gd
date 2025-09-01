@@ -5,6 +5,9 @@ extends Node2D
 var select_pose_index_name: Dictionary
 var select_expression_index_name: Dictionary
 
+func _ready() -> void:
+	Dialogic.start('test')
+
 func change_character_command(character: String, pose: String, expression: String, isTalking: bool):
 	var character_node: Character = get_node(character)
 	

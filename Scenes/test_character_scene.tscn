@@ -30,6 +30,7 @@ currentExpressionName = "Hysteric1"
 [node name="MarginContainer" type="MarginContainer" parent="ConsoleCanvas"]
 offset_right = 1920.0
 offset_bottom = 1080.0
+focus_mode = 2
 
 [node name="Console" parent="ConsoleCanvas/MarginContainer" instance=ExtResource("4_ptwsg")]
 layout_mode = 2
