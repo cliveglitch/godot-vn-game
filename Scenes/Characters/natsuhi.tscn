@@ -314,6 +314,8 @@ animations = [{
 script = ExtResource("1_qcdw6")
 
 [node name="A11" type="Node2D" parent="."]
+visible = false
+position = Vector2(0, -575)
 script = ExtResource("2_pd8t1")
 
 [node name="Worried2" type="Sprite2D" parent="A11"]
@@ -344,9 +346,11 @@ sprite_frames = SubResource("SpriteFrames_1lhsj")
 
 [node name="A32" type="Node2D" parent="."]
 visible = false
+position = Vector2(0, -575)
 script = ExtResource("2_pd8t1")
 
 [node name="Hysteric1" type="Sprite2D" parent="A32"]
+visible = false
 position = Vector2(28, 0)
 texture = ExtResource("10_iu7hv")
 script = ExtResource("4_cr6au")
@@ -356,6 +360,7 @@ position = Vector2(-12, -229)
 sprite_frames = SubResource("SpriteFrames_55ga2")
 
 [node name="Angry1" type="Sprite2D" parent="A32"]
+visible = false
 texture = ExtResource("12_4w8dv")
 script = ExtResource("4_cr6au")
 
@@ -373,6 +378,7 @@ sprite_frames = SubResource("SpriteFrames_bhs8c")
 
 [node name="A33" type="Node2D" parent="."]
 visible = false
+position = Vector2(0, -575)
 script = ExtResource("2_pd8t1")
 
 [node name="Surprised2" type="Sprite2D" parent="A33"]
@@ -385,6 +391,7 @@ sprite_frames = SubResource("SpriteFrames_4v1nv")
 
 [node name="A34" type="Node2D" parent="."]
 visible = false
+position = Vector2(0, -575)
 script = ExtResource("2_pd8t1")
 
 [node name="Surprised2" type="Sprite2D" parent="A34"]
@@ -396,7 +403,7 @@ position = Vector2(-137, -234)
 sprite_frames = SubResource("SpriteFrames_n48et")
 
 [node name="A35" type="Node2D" parent="."]
-visible = false
+position = Vector2(0, -575)
 script = ExtResource("2_pd8t1")
 
 [node name="Surprised2" type="Sprite2D" parent="A35"]

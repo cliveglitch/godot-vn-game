@@ -1,5 +1,6 @@
 ## Pose of a character, must have at least 1 PoseExpression Node as a child
 ## that shows a sprite with an animated mouth
+@tool
 class_name Pose
 extends Node2D
 

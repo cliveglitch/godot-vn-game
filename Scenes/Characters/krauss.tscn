@@ -314,18 +314,23 @@ animations = [{
 script = ExtResource("1_qrig0")
 
 [node name="A11" type="Node2D" parent="."]
+visible = false
 script = ExtResource("20_nr21b")
 
 [node name="Default1" type="Sprite2D" parent="A11"]
+visible = false
+position = Vector2(1, -580)
 texture = ExtResource("32_jkrjq")
 script = ExtResource("3_04k1d")
 
 [node name="Mouth" type="AnimatedSprite2D" parent="A11/Default1"]
 position = Vector2(-113, -305)
 sprite_frames = SubResource("SpriteFrames_57ju4")
+frame_progress = 0.423959
 
 [node name="Villainous1" type="Sprite2D" parent="A11"]
 visible = false
+position = Vector2(0, -579)
 texture = ExtResource("34_h62dq")
 script = ExtResource("3_04k1d")
 
@@ -334,7 +339,7 @@ position = Vector2(-114, -307)
 sprite_frames = SubResource("SpriteFrames_xbtqa")
 
 [node name="Troubled2" type="Sprite2D" parent="A11"]
-visible = false
+position = Vector2(0, -579)
 texture = ExtResource("36_4tw8y")
 script = ExtResource("3_04k1d")
 
@@ -344,9 +349,11 @@ sprite_frames = SubResource("SpriteFrames_2p0ou")
 
 [node name="A12" type="Node2D" parent="."]
 visible = false
+position = Vector2(0, -579)
 script = ExtResource("20_nr21b")
 
 [node name="Default1" type="Sprite2D" parent="A12"]
+visible = false
 texture = ExtResource("38_e2a8k")
 script = ExtResource("3_04k1d")
 
@@ -355,6 +362,7 @@ position = Vector2(11, -305)
 sprite_frames = SubResource("SpriteFrames_icr5g")
 
 [node name="Villainous1" type="Sprite2D" parent="A12"]
+visible = false
 texture = ExtResource("40_43a6t")
 script = ExtResource("3_04k1d")
 
@@ -371,10 +379,11 @@ position = Vector2(9, -310)
 sprite_frames = SubResource("SpriteFrames_glhb5")
 
 [node name="A14" type="Node2D" parent="."]
-visible = false
+position = Vector2(0, -579)
 script = ExtResource("20_nr21b")
 
 [node name="Default1" type="Sprite2D" parent="A14"]
+visible = false
 texture = ExtResource("44_egopq")
 script = ExtResource("3_04k1d")
 
@@ -383,6 +392,7 @@ position = Vector2(-100, -305)
 sprite_frames = SubResource("SpriteFrames_46vqj")
 
 [node name="Villainous3" type="Sprite2D" parent="A14"]
+visible = false
 texture = ExtResource("48_ckcun")
 script = ExtResource("3_04k1d")
 

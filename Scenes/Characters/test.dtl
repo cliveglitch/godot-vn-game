@@ -1,0 +1,8 @@
+join Krauss left [animation="Slide From Left"]
+Krauss: Hello, I'm gonna invest to the moon!
+join Natsuhi center [animation="Slide From Left" length="1.0" wait="true"]
+Natsuhi: No! No you will not darling! You already lost us too much money!
+Krauss: To the mooooooooooon!
+leave Krauss [animation="Slide Out Up" length="1.0" wait="true"]
+Natsuhi: Not again!
+leave Natsuhi [animation="Slide Out Up" length="0.3"]

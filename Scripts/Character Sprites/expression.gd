@@ -1,5 +1,6 @@
 ## Expression of a character, must have one AnimatedSprite2D Node as a child
 ## that animates the mouth.
+@tool
 class_name PoseExpression
 extends Sprite2D
 
