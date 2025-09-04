@@ -10,16 +10,32 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "Default",
+&"default_portrait": "Villainous Thinking",
 &"description": "",
 &"display_name": "Krauss",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 150),
 &"portraits": {
-"Default": {
+"Villainous Explaining": {
 "export_overrides": {
-"image": ""
+"currentExpressionName": "\"Villainous1\"",
+"currentPoseName": "\"A12\"",
+"image": "",
+"isTalking": "false",
+"number_test": "\"Tres\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": "res://Scenes/Characters/krauss.tscn"
+},
+"Villainous Thinking": {
+"export_overrides": {
+"currentExpressionName": "\"Villainous1\"",
+"currentPoseName": "\"A11\"",
+"image": "",
+"number_test": "\"Tres\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

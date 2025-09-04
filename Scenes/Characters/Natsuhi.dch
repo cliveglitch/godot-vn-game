@@ -10,18 +10,19 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "Default",
+&"default_portrait": "Indignated",
 &"description": "",
 &"display_name": "Natsuhi",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 150),
 &"portraits": {
-"Default": {
+"Indignated": {
 "export_overrides": {
-"currentExpressionName": "\"Hysteric1\"",
+"currentExpressionName": "\"Angry1\"",
 "currentPoseName": "\"A32\"",
-"image": ""
+"isTalking": "false",
+"number_test": "\"Uno\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -31,8 +32,7 @@
 "Surprised": {
 "export_overrides": {
 "currentExpressionName": "\"Surprised2\"",
-"currentPoseName": "\"A35\"",
-"image": ""
+"currentPoseName": "\"A34\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

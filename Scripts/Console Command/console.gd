@@ -105,6 +105,8 @@ func _input(event: InputEvent) -> void:
 		if next_command:
 			input_bar.text = next_command
 			input_bar.caret_column = input_bar.text.length()
+	#TODO: Make it so instead of limiting the InputEventKey's it limits based
+	#on its child InputBar
 	elif visible and event is not InputEventKey:
 		get_viewport().set_input_as_handled()
 	

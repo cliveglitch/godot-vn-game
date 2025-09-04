@@ -4,7 +4,8 @@
 class_name Pose
 extends Node2D
 
-var expressions: Dictionary
+var expressions: Dictionary[String, PoseExpression]
+var expressionNames: PackedStringArray = []
 
 var currentExpression: PoseExpression:
 	set(newExpression):
@@ -12,7 +13,8 @@ var currentExpression: PoseExpression:
 		refresh_expressions()
 
 func _ready() -> void:
-	get_expressions()
+	if not expressions:
+		get_expressions()
 	if not expressions.size() > 0:
 		push_warning("Pose must have at least 1 Expression node.")
 
@@ -21,8 +23,10 @@ func get_expressions():
 		if child is PoseExpression:
 			expressions[child.name] = child
 			currentExpression = child
+			expressionNames.append(child.name)
 
 func refresh_expressions() -> void:
 	for expression in expressions:
 		expressions[expression].visible = false
-	currentExpression.visible = true
+	if currentExpression:
+		currentExpression.visible = true

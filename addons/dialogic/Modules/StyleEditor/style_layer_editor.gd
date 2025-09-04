@@ -33,7 +33,7 @@ func _ready() -> void:
 	%LayerTree.add_theme_constant_override("icon_max_width", _minimum_tree_item_height)
 
 
-func load_style(style:DialogicStyle) -> void:
+func load_style(style: DialogicStyle) -> void:
 	current_style = style
 
 	if current_style.has_meta("_latest_layer"):
@@ -65,7 +65,7 @@ func load_style_layer_list() -> void:
 	select_layer(current_layer_id)
 
 
-func select_layer(id:String) -> void:
+func select_layer(id: String) -> void:
 	if id == "":
 		tree.get_root().select(0)
 	else:
@@ -75,7 +75,7 @@ func select_layer(id:String) -> void:
 				return
 
 
-func setup_layer_tree_item(info:Dictionary, item:TreeItem) -> void:
+func setup_layer_tree_item(info: Dictionary, item: TreeItem) -> void:
 	item.custom_minimum_height = _minimum_tree_item_height
 
 	if %StyleBrowser.is_premade_style_part(info.path):
@@ -96,7 +96,7 @@ func _on_layer_selected() -> void:
 	load_layer(item.get_meta("id", ""))
 
 
-func load_layer(layer_id:=""):
+func load_layer(layer_id := ""):
 	current_layer_id = layer_id
 	current_style.set_meta('_latest_layer', current_layer_id)
 
@@ -106,7 +106,7 @@ func load_layer(layer_id:=""):
 	if %StyleBrowser.is_premade_style_part(layer_info.get('path', 'Unkown Layer')):
 		var premade_infos = %StyleBrowser.premade_scenes_reference[layer_info.get('path')]
 		%LayerName.text = premade_infos.get('name', 'Unknown Layer')
-		%SmallLayerAuthor.text = "by "+premade_infos.get('author', '')
+		%SmallLayerAuthor.text = "by " + premade_infos.get('author', '')
 		%SmallLayerDescription.text = premade_infos.get('description', '')
 
 		if premade_infos.get('preview_image', null) and ResourceLoader.exists(premade_infos.get('preview_image')[0]):
@@ -130,8 +130,7 @@ func load_layer(layer_id:=""):
 			inherited_layer_info.overrides)
 
 
-
-func add_layer(scene_path:="", overrides:= {}):
+func add_layer(scene_path := "", overrides := {}):
 	current_style.add_layer(scene_path, overrides)
 	load_style_layer_list()
 	await get_tree().process_frame
@@ -147,21 +146,21 @@ func delete_layer() -> void:
 	%LayerTree.get_root().select(0)
 
 
-func move_layer(from_idx:int, to_idx:int) -> void:
+func move_layer(from_idx: int, to_idx: int) -> void:
 	current_style.move_layer(from_idx, to_idx)
 
 	load_style_layer_list()
 	select_layer(current_style.get_layer_id_at_index(to_idx))
 
 
-func replace_layer(layer_id:String, scene_path:String) -> void:
+func replace_layer(layer_id: String, scene_path: String) -> void:
 	current_style.set_layer_scene(layer_id, scene_path)
 
 	load_style_layer_list()
 	select_layer(layer_id)
 
 
-func _on_add_layer_menu_pressed(index:int) -> void:
+func _on_add_layer_menu_pressed(index: int) -> void:
 	# Adding a premade layer
 	if index == 2:
 		%StyleBrowserWindow.popup_centered_ratio(0.6)
@@ -180,7 +179,7 @@ func _on_add_layer_menu_pressed(index:int) -> void:
 			"Open custom layer scene")
 
 
-func _on_replace_layer_menu_pressed(index:int) -> void:
+func _on_replace_layer_menu_pressed(index: int) -> void:
 	# Adding a premade layer
 	if index == 2:
 		%StyleBrowserWindow.popup_centered_ratio(0.6)
@@ -202,11 +201,11 @@ func _on_replace_layer_menu_pressed(index:int) -> void:
 			"Open custom layer scene")
 
 
-func _on_add_custom_layer_file_selected(file_path:String) -> void:
+func _on_add_custom_layer_file_selected(file_path: String) -> void:
 	add_layer(file_path)
 
 
-func _on_replace_custom_layer_file_selected(file_path:String) -> void:
+func _on_replace_custom_layer_file_selected(file_path: String) -> void:
 	replace_layer(%LayerTree.get_selected().get_meta("id", ""), file_path)
 
 
@@ -218,7 +217,7 @@ func _on_make_custom_button_about_to_popup() -> void:
 		%MakeCustomButton.get_popup().set_item_disabled(2, true)
 
 
-func _on_make_custom_menu_pressed(index:int) -> void:
+func _on_make_custom_menu_pressed(index: int) -> void:
 	# This layer only
 	if index == 2:
 		find_parent('EditorView').godot_file_dialog(
@@ -235,21 +234,20 @@ func _on_make_custom_menu_pressed(index:int) -> void:
 			"Select folder for new layout scene")
 
 
-func _on_make_custom_layer_file_selected(file:String) -> void:
+func _on_make_custom_layer_file_selected(file: String) -> void:
 	make_layer_custom(file)
 
 
-func _on_make_custom_layout_file_selected(file:String) -> void:
+func _on_make_custom_layout_file_selected(file: String) -> void:
 	make_layout_custom(file)
 
 
-func make_layer_custom(target_folder:String, custom_name := "") -> void:
-
+func make_layer_custom(target_folder: String, custom_name := "") -> void:
 	var original_file: String = current_style.get_layer_info(current_layer_id).path
 	var custom_new_folder := ""
 
 	if custom_name.is_empty():
-		custom_name = "custom_"+%StyleBrowser.premade_scenes_reference[original_file].name.to_snake_case()
+		custom_name = "custom_" + %StyleBrowser.premade_scenes_reference[original_file].name.to_snake_case()
 		custom_new_folder = %StyleBrowser.premade_scenes_reference[original_file].name.to_pascal_case()
 
 	var result_path := DialogicUtil.make_file_custom(
@@ -269,7 +267,7 @@ func make_layer_custom(target_folder:String, custom_name := "") -> void:
 		%LayerTree.get_root().get_child(%LayerTree.get_selected().get_index()).select(0)
 
 
-func make_layout_custom(target_folder:String) -> void:
+func make_layout_custom(target_folder: String) -> void:
 	target_folder = target_folder.path_join("Custom" + current_style.name.to_pascal_case())
 
 	DirAccess.make_dir_absolute(target_folder)
@@ -317,7 +315,6 @@ func make_layout_custom(target_folder:String) -> void:
 	find_parent('EditorView').plugin_reference.get_editor_interface().get_resource_filesystem().scan_sources()
 
 
-
 func _on_delete_layer_button_pressed() -> void:
 	delete_layer()
 
@@ -325,7 +322,7 @@ func _on_delete_layer_button_pressed() -> void:
 #region Layer Settings
 ####### LAYER SETTINGS #########################################################
 
-func load_layout_scene_customization(custom_scene_path:String, overrides:Dictionary = {}, inherited_overrides:Dictionary = {}) -> void:
+func load_layout_scene_customization(custom_scene_path: String, overrides: Dictionary = {}, inherited_overrides: Dictionary = {}) -> void:
 	for child in %LayerSettingsTabs.get_children():
 		child.get_parent().remove_child(child)
 		child.queue_free()
@@ -338,7 +335,7 @@ func load_layout_scene_customization(custom_scene_path:String, overrides:Diction
 
 	var settings := []
 	if scene and scene.script:
-		settings = collect_settings(scene.script.get_script_property_list())
+		settings = collect_settings(scene.get_property_list())
 
 	if settings.is_empty():
 		var note := Label.new()
@@ -362,6 +359,8 @@ func load_layout_scene_customization(custom_scene_path:String, overrides:Diction
 	var current_subgroup_name := ""
 	customization_editor_info = {}
 
+	await scene.ready
+
 	for i in settings:
 		match i['id']:
 			&"GROUP":
@@ -379,7 +378,6 @@ func load_layout_scene_customization(custom_scene_path:String, overrides:Diction
 				current_subgroup_name = ""
 
 			&"SUBGROUP":
-
 				# add separator
 				if current_subgroup_name:
 					current_grid.add_child(HSeparator.new())
@@ -401,7 +399,7 @@ func load_layout_scene_customization(custom_scene_path:String, overrides:Diction
 
 			&"SETTING":
 				var label := Label.new()
-				label.text = str(i['name'].trim_prefix(current_group_name+'_').trim_prefix(current_subgroup_name+'_')).capitalize()
+				label.text = str(i['name'].trim_prefix(current_group_name + '_').trim_prefix(current_subgroup_name + '_')).capitalize()
 				current_grid.add_child(label, true)
 
 				var scene_value: Variant = scene.get(i['name'])
@@ -437,7 +435,7 @@ func load_layout_scene_customization(custom_scene_path:String, overrides:Diction
 		scene.queue_free()
 
 
-func collect_settings(properties:Array[Dictionary]) -> Array[Dictionary]:
+func collect_settings(properties: Array[Dictionary]) -> Array[Dictionary]:
 	var settings: Array[Dictionary] = []
 
 	var current_group := {}
@@ -463,14 +461,14 @@ func collect_settings(properties:Array[Dictionary]) -> Array[Dictionary]:
 				continue
 
 			if current_group.is_empty():
-				current_group = {'name':'General', 'added':false, 'id':&"GROUP"}
+				current_group = {'name': 'General', 'added': false, 'id': &"GROUP"}
 
 			if current_group.get('added', true) == false:
 				settings.append(current_group)
 				current_group['added'] = true
 
 			if current_subgroup.is_empty():
-				current_subgroup = {'name':current_group['name'], 'added':false, 'id':&"SUBGROUP"}
+				current_subgroup = {'name': current_group['name'], 'added': false, 'id': &"SUBGROUP"}
 
 			if current_subgroup.get('added', true) == false:
 				settings.append(current_subgroup)
@@ -481,7 +479,7 @@ func collect_settings(properties:Array[Dictionary]) -> Array[Dictionary]:
 	return settings
 
 
-func set_export_override(property_name:String, value:String = "") -> void:
+func set_export_override(property_name: String, value: String = "") -> void:
 	if str_to_var(value) != customization_editor_info[property_name]['orig']:
 		current_style.set_layer_setting(current_layer_id, property_name, value)
 		customization_editor_info[property_name]['reset'].disabled = false
@@ -490,13 +488,13 @@ func set_export_override(property_name:String, value:String = "") -> void:
 		customization_editor_info[property_name]['reset'].disabled = true
 
 
-func _on_export_override_reset(property_name:String) -> void:
+func _on_export_override_reset(property_name: String) -> void:
 	current_style.remove_layer_setting(current_layer_id, property_name)
 	customization_editor_info[property_name]['reset'].disabled = true
 	set_customization_value(property_name, customization_editor_info[property_name]['orig'])
 
 
-func set_customization_value(property_name:String, value:Variant) -> void:
+func set_customization_value(property_name: String, value: Variant) -> void:
 	var node: Node = customization_editor_info[property_name]['node']
 	if node is CheckBox:
 		node.button_pressed = value
@@ -536,7 +534,7 @@ func _on_layer_tree_button_clicked(item: TreeItem, column: int, id: int, mouse_b
 #region Helpers
 ####### HELPERS ################################################################
 
-func clean_scene_name(file_path:String) -> String:
+func clean_scene_name(file_path: String) -> String:
 	return file_path.get_file().trim_suffix('.tscn').capitalize()
 
 #endregion

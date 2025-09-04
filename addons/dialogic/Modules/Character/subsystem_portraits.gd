@@ -154,6 +154,7 @@ func _change_portrait(character_node: Node2D, portrait: String, fade_animation:=
 		portrait_node.set_meta('portrait', portrait)
 		character_node.set_meta('portrait', portrait)
 
+		var selectedPortrait = character.portraits[portrait]
 		DialogicUtil.apply_scene_export_overrides(portrait_node, character.portraits[portrait].get('export_overrides', {}))
 
 		if portrait_node.has_method('_update_portrait'):
