@@ -349,7 +349,7 @@ mouth_framerate = 10.0
 [node name="Mouth" type="AnimatedSprite2D" parent="A11/Troubled2"]
 position = Vector2(-114, -311)
 sprite_frames = SubResource("SpriteFrames_2p0ou")
-frame_progress = 0.29786065
+frame_progress = 0.30216977
 
 [node name="A12" type="Node2D" parent="."]
 visible = false
@@ -384,7 +384,7 @@ mouth_framerate = 10.0
 [node name="Mouth" type="AnimatedSprite2D" parent="A12/Troubled3"]
 position = Vector2(9, -310)
 sprite_frames = SubResource("SpriteFrames_glhb5")
-frame_progress = 0.29786065
+frame_progress = 0.30216977
 
 [node name="A14" type="Node2D" parent="."]
 visible = false

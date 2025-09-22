@@ -115,7 +115,7 @@ func _get_covered_rect() -> Rect2:
 
 func _on_text_start(_data) -> void:
 	# Dialogic2 character name must match the Node name
-	var character_who_will_talk = Dialogic.Text.get_character_name_parsed(_data.character)
+	var character_who_will_talk =_data.character.display_name
 	var isCharacterText = character_who_will_talk.to_upper() == dialogic_name.to_upper()
 	isTalking = isCharacterText
 	
