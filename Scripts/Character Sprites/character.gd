@@ -52,16 +52,14 @@ func _ready() -> void:
 		if currentPose.expressions.has(currentExpressionName):
 			change_expression_by_name(currentExpressionName)
 		if "Text" in Dialogic:
-			Dialogic.Text.about_to_show_text.connect(_on_text_start)
-			#Dialogic.Text.text_started.connect(_on_text_start)
+			Dialogic.Text.text_started.connect(_on_text_start)
 			Dialogic.Text.text_finished.connect(_on_text_finished)
 	else:
 		push_warning("Character must have at least 1 Pose node.")
 
 func _get_property_list() -> Array:
 	var propsList: Array = []
-	
-	# TODO: Make exports show on Dialogic2
+
 	propsList.append({
 		"name": "currentPoseName",
 		"type": TYPE_STRING,
@@ -117,10 +115,9 @@ func _get_covered_rect() -> Rect2:
 
 func _on_text_start(_data) -> void:
 	# Dialogic2 character name must match the Node name
-	var character_who_will_talk = _data.character
-	var charName = character_who_will_talk.display_name
-	var char_self_Name = dialogic_name
-	var isCharacterText = character_who_will_talk.display_name.to_upper() == dialogic_name.to_upper()
+	var character_who_will_talk = Dialogic.Text.get_character_name_parsed(_data.character)
+	var current_characer = dialogic_name
+	var isCharacterText = character_who_will_talk.to_upper() == dialogic_name.to_upper()
 	isTalking = isCharacterText
 	
 func _on_text_finished(_character) -> void:

@@ -17,6 +17,7 @@ position = Vector2(961, -541)
 [node name="Krauss" parent="." instance=ExtResource("2_sktyh")]
 position = Vector2(1503, 0)
 scale = Vector2(0.9, 0.9)
+isTalking = false
 
 [node name="Natsuhi" parent="." instance=ExtResource("3_tbk3f")]
 position = Vector2(1087, 0)

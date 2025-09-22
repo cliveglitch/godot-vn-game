@@ -51,7 +51,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 14.0
+"speed": 10.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8fb87"]
@@ -83,7 +83,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 14.0
+"speed": 10.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bvbxi"]
@@ -115,7 +115,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 14.0
+"speed": 10.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tiikm"]
@@ -147,7 +147,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 14.0
+"speed": 10.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_obdhs"]
@@ -179,7 +179,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 14.0
+"speed": 10.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fyrtg"]
@@ -211,7 +211,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 14.0
+"speed": 10.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rwtar"]
@@ -243,7 +243,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 14.0
+"speed": 10.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b71x4"]
@@ -275,7 +275,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 14.0
+"speed": 10.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m3fhp"]
@@ -307,35 +307,36 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 14.0
+"speed": 10.0
 }]
 
 [node name="Krauss" type="Node2D"]
 script = ExtResource("1_qrig0")
+isTalking = true
 dialogic_name = "Krauss"
 currentPoseName = "A14"
 currentExpressionName = "Smug1"
 
 [node name="A11" type="Node2D" parent="."]
 visible = false
+position = Vector2(11, 0)
 script = ExtResource("20_nr21b")
 
 [node name="Default1" type="Sprite2D" parent="A11"]
-visible = false
 position = Vector2(1, -580)
 texture = ExtResource("32_jkrjq")
 script = ExtResource("3_04k1d")
+mouth_framerate = 10.0
 
 [node name="Mouth" type="AnimatedSprite2D" parent="A11/Default1"]
 position = Vector2(-113, -305)
 sprite_frames = SubResource("SpriteFrames_57ju4")
-frame_progress = 0.423959
 
 [node name="Villainous1" type="Sprite2D" parent="A11"]
-visible = false
 position = Vector2(0, -579)
 texture = ExtResource("34_h62dq")
 script = ExtResource("3_04k1d")
+mouth_framerate = 10.0
 
 [node name="Mouth" type="AnimatedSprite2D" parent="A11/Villainous1"]
 position = Vector2(-114, -307)
@@ -345,30 +346,30 @@ sprite_frames = SubResource("SpriteFrames_xbtqa")
 position = Vector2(0, -579)
 texture = ExtResource("36_4tw8y")
 script = ExtResource("3_04k1d")
+mouth_framerate = 10.0
 
 [node name="Mouth" type="AnimatedSprite2D" parent="A11/Troubled2"]
 position = Vector2(-114, -311)
 sprite_frames = SubResource("SpriteFrames_2p0ou")
 
 [node name="A12" type="Node2D" parent="."]
-visible = false
-position = Vector2(0, -579)
+position = Vector2(-110, -579)
 script = ExtResource("20_nr21b")
 
 [node name="Default1" type="Sprite2D" parent="A12"]
-visible = false
 texture = ExtResource("38_e2a8k")
 script = ExtResource("3_04k1d")
+mouth_framerate = 10.0
 
 [node name="Mouth" type="AnimatedSprite2D" parent="A12/Default1"]
 position = Vector2(11, -305)
 sprite_frames = SubResource("SpriteFrames_icr5g")
-frame_progress = 0.224486
+frame_progress = 0.4929185
 
 [node name="Villainous1" type="Sprite2D" parent="A12"]
-visible = false
 texture = ExtResource("40_43a6t")
 script = ExtResource("3_04k1d")
+mouth_framerate = 10.0
 
 [node name="Mouth" type="AnimatedSprite2D" parent="A12/Villainous1"]
 position = Vector2(9, -307)
@@ -378,6 +379,7 @@ frame_progress = 0.205536
 [node name="Troubled3" type="Sprite2D" parent="A12"]
 texture = ExtResource("42_nhd8x")
 script = ExtResource("3_04k1d")
+mouth_framerate = 10.0
 
 [node name="Mouth" type="AnimatedSprite2D" parent="A12/Troubled3"]
 position = Vector2(9, -310)
@@ -391,6 +393,7 @@ script = ExtResource("20_nr21b")
 visible = false
 texture = ExtResource("44_egopq")
 script = ExtResource("3_04k1d")
+mouth_framerate = 10.0
 
 [node name="Mouth" type="AnimatedSprite2D" parent="A14/Default1"]
 position = Vector2(-100, -305)
@@ -400,6 +403,7 @@ sprite_frames = SubResource("SpriteFrames_46vqj")
 visible = false
 texture = ExtResource("48_ckcun")
 script = ExtResource("3_04k1d")
+mouth_framerate = 10.0
 
 [node name="Mouth" type="AnimatedSprite2D" parent="A14/Villainous3"]
 position = Vector2(-102, -309)
@@ -408,7 +412,9 @@ sprite_frames = SubResource("SpriteFrames_xcyrt")
 [node name="Smug1" type="Sprite2D" parent="A14"]
 texture = ExtResource("46_8wpaq")
 script = ExtResource("3_04k1d")
+mouth_framerate = 10.0
 
 [node name="Mouth" type="AnimatedSprite2D" parent="A14/Smug1"]
 position = Vector2(-102, -308)
 sprite_frames = SubResource("SpriteFrames_wdnwn")
+frame_progress = 0.53725314

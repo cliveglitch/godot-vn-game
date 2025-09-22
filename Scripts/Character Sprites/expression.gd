@@ -5,11 +5,18 @@ class_name PoseExpression
 extends Sprite2D
 
 var mouth: AnimatedSprite2D
+@export var mouth_framerate: float = 12:
+	set(newFramerate):
+		if mouth:
+			mouth.sprite_frames.set_animation_speed("default", newFramerate)
+		mouth_framerate = newFramerate
 
 func _ready() -> void:
 	get_mouth()
 	if not self.texture:
 		push_warning("Expression must have a texture")
+	if mouth:
+		mouth.sprite_frames.set_animation_speed("default", mouth_framerate)
 
 func get_mouth():
 	for node: Node in get_children():
