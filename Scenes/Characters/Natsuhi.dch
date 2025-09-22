@@ -39,9 +39,9 @@
 "scale": 1,
 "scene": "res://Scenes/Characters/natsuhi.tscn"
 },
-"Surprised/Hands Down": {
+"Surprised/Hand down and Front": {
 "export_overrides": {
-"currentPoseName": "\"A32\"",
+"currentPoseName": "\"A35\"",
 "image": ""
 },
 "mirror": false,

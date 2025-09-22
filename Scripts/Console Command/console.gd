@@ -94,21 +94,18 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("open_console"):
 		self.visible = !self.visible
 		input_bar.grab_focus()
-	elif event.is_action_released("ui_up"):
-		input_bar.text = history.next()
-		input_bar.caret_column = input_bar.text.length()
-	elif event.is_action_released("ui_down"):
-		input_bar.text = history.prev()
-		input_bar.caret_column = input_bar.text.length()
-	elif event.is_action_released("ui_text_completion_replace"):
-		var next_command = autocomplete_command(input_bar.text)
-		if next_command:
-			input_bar.text = next_command
+	elif visible:
+		if event.is_action_released("ui_up"):
+			input_bar.text = history.next()
 			input_bar.caret_column = input_bar.text.length()
-	#TODO: Make it so instead of limiting the InputEventKey's it limits based
-	#on its child InputBar
-	elif visible and event is not InputEventKey:
-		get_viewport().set_input_as_handled()
+		elif event.is_action_released("ui_down"):
+			input_bar.text = history.prev()
+			input_bar.caret_column = input_bar.text.length()
+		elif event.is_action_released("ui_text_completion_replace"):
+			var next_command = autocomplete_command(input_bar.text)
+			if next_command:
+				input_bar.text = next_command
+				input_bar.caret_column = input_bar.text.length()
 	
 	input_bar.caret_blink = true
 
