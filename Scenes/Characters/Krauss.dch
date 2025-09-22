@@ -10,14 +10,14 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "Villainous Thinking",
+&"default_portrait": "Villanous/Hand Face",
 &"description": "",
 &"display_name": "Krauss",
 &"mirror": false,
 &"nicknames": [""],
 &"offset": Vector2(0, 150),
 &"portraits": {
-"Villainous Explaining": {
+"Villanous/Hand Explaining": {
 "export_overrides": {
 "currentExpressionName": "\"Villainous1\"",
 "currentPoseName": "\"A12\"",
@@ -30,7 +30,7 @@
 "scale": 1,
 "scene": "res://Scenes/Characters/krauss.tscn"
 },
-"Villainous Thinking": {
+"Villanous/Hand Face": {
 "export_overrides": {
 "currentExpressionName": "\"Villainous3\"",
 "currentPoseName": "\"A14\"",

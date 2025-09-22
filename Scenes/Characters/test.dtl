@@ -1,14 +1,14 @@
 [background arg="res://Assets/Mkur_3af.webp" fade="0.0"]
-join Krauss (Villainous Explaining) leftmost [animation="Slide From Left"]
+join Krauss (Villanous/Hand Explaining) leftmost [animation="Slide From Left"]
 Krauss: Hello, I'm gonna invest to the moon!
 update Krauss left [animation="Tada" length="0.3" move_time="0.3"]
-join Natsuhi (Indignated) center [animation="Slide From Left" length="1.0" wait="true"]
-Natsuhi (Indignated): No! No you will not darling! You already lost us too much money!
-Krauss (Villainous Thinking): To the mooooooooooon!
+join Natsuhi (Indignated/Hands Down) center [animation="Slide From Left" length="1.0" wait="true"]
+Natsuhi (Indignated/Hands Down): No! No you will not darling! You already lost us too much money!
+Krauss (Villanous/Hand Face): To the mooooooooooon!
 leave Krauss [animation="Slide Out Up" length="1.0" wait="true"]
-update Natsuhi (Surprised) [animation="Bounce" wait="true"]
-Natsuhi (Surprised): Not again!
-Natsuhi (Surprised): Not again! NOT AGAIN! NOT AGAIN!
-Natsuhi (Indignated): COME BACK RIGHT NOW!
-Natsuhi (Indignated): Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+update Natsuhi (Surprised/Hands Down) [animation="Bounce" wait="true"]
+Natsuhi (Surprised/Hands Down): Not again!
+Natsuhi (Surprised/Hands Down): Not again! NOT AGAIN! NOT AGAIN!
+Natsuhi (Surprised/Hand Face Front): COME BACK RIGHT NOW!
+Natsuhi (Indignated/Hands Down): Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 leave Natsuhi [animation="Slide Out Up" length="0.3"]
