@@ -42,7 +42,7 @@ animations/join_default_length=0.5
 animations/join_default_wait=true
 animations/leave_default_length=0.5
 animations/leave_default_wait=true
-animations/cross_fade_default_length=0.5
+animations/cross_fade_default_length=0.0
 choices/autofocus_first=true
 choices/delay=0.2
 choices/reveal_delay=0
@@ -64,6 +64,9 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
+animations/join_default="Fade In Up"
+animations/cross_fade_default="Fade Cross"
+animations/leave_default="Bounce Out"
 
 [display]
 

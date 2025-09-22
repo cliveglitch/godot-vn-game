@@ -323,6 +323,7 @@ position = Vector2(11, 0)
 script = ExtResource("20_nr21b")
 
 [node name="Default1" type="Sprite2D" parent="A11"]
+visible = false
 position = Vector2(1, -580)
 texture = ExtResource("32_jkrjq")
 script = ExtResource("3_04k1d")
@@ -333,6 +334,7 @@ position = Vector2(-113, -305)
 sprite_frames = SubResource("SpriteFrames_57ju4")
 
 [node name="Villainous1" type="Sprite2D" parent="A11"]
+visible = false
 position = Vector2(0, -579)
 texture = ExtResource("34_h62dq")
 script = ExtResource("3_04k1d")
@@ -351,12 +353,15 @@ mouth_framerate = 10.0
 [node name="Mouth" type="AnimatedSprite2D" parent="A11/Troubled2"]
 position = Vector2(-114, -311)
 sprite_frames = SubResource("SpriteFrames_2p0ou")
+frame_progress = 0.14159103
 
 [node name="A12" type="Node2D" parent="."]
+visible = false
 position = Vector2(-110, -579)
 script = ExtResource("20_nr21b")
 
 [node name="Default1" type="Sprite2D" parent="A12"]
+visible = false
 texture = ExtResource("38_e2a8k")
 script = ExtResource("3_04k1d")
 mouth_framerate = 10.0
@@ -367,6 +372,7 @@ sprite_frames = SubResource("SpriteFrames_icr5g")
 frame_progress = 0.4929185
 
 [node name="Villainous1" type="Sprite2D" parent="A12"]
+visible = false
 texture = ExtResource("40_43a6t")
 script = ExtResource("3_04k1d")
 mouth_framerate = 10.0
@@ -384,6 +390,7 @@ mouth_framerate = 10.0
 [node name="Mouth" type="AnimatedSprite2D" parent="A12/Troubled3"]
 position = Vector2(9, -310)
 sprite_frames = SubResource("SpriteFrames_glhb5")
+frame_progress = 0.14159103
 
 [node name="A14" type="Node2D" parent="."]
 position = Vector2(0, -579)
@@ -417,4 +424,4 @@ mouth_framerate = 10.0
 [node name="Mouth" type="AnimatedSprite2D" parent="A14/Smug1"]
 position = Vector2(-102, -308)
 sprite_frames = SubResource("SpriteFrames_wdnwn")
-frame_progress = 0.53725314
+frame_progress = 0.6788415
