@@ -8,8 +8,6 @@ extends DialogicPortrait
 		isTalking = newIsTalking
 		refresh_talking()
 
-@export var dialogic_name: String = ""
-
 var currentPoseName: String:
 	set(newName):
 		currentPoseName = newName
@@ -114,9 +112,10 @@ func _get_covered_rect() -> Rect2:
 	return Rect2(Vector2(0, -1150), Vector2(1200, 1150) * currentPose.scale)
 
 func _on_text_start(_data) -> void:
-	# Dialogic2 character name must match the Node name
-	var character_who_will_talk =_data.character.display_name
-	var isCharacterText = character_who_will_talk.to_upper() == dialogic_name.to_upper()
+	var character_who_will_talk = _data.character.resource_path.get_file().get_basename()
+	var self_character = self.scene_file_path.get_file().get_basename()
+	
+	var isCharacterText = character_who_will_talk.to_upper() == self_character.to_upper()
 	isTalking = isCharacterText
 	
 func _on_text_finished(_character) -> void:

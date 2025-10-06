@@ -4,7 +4,9 @@ Krauss: Hello, I'm gonna invest to the moon!
 update Krauss left [animation="Tada" length="0.3" move_time="0.3"]
 join Natsuhi (Indignated/Hands Down) center [animation="Slide From Left" length="1.0" wait="true"]
 Natsuhi (Indignated/Hands Down): No! No you will not darling! You already lost us too much money!
-Krauss (Villanous/Hand Face): To the mooooooooooon!
+Krauss (Villanous/Hand Explaining): Why not darling, I've contacted a trusty man who can help me achive it!
+Natsuhi: Another one? Darling, it's like the 50th time you tell me about some random guy wh you trust just so after you get our money stolen!
+Krauss (Villanous/Hand Face): I don't care! To the mooooooooooon!
 leave Krauss [animation="Slide Out Up" length="1.0" wait="true"]
 update Natsuhi (Surprised/Hand down and Front) [animation="Bounce" wait="true"]
 Natsuhi (Surprised/Hand down and Front): Not again!

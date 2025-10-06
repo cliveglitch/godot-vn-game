@@ -324,9 +324,9 @@ static func get_scene_export_defaults(node: Node) -> Dictionary:
 	if !node.script:
 		return {}
 
-	#if Engine.get_main_loop().has_meta('dialogic_scene_export_defaults') and \
-			#node.script.resource_path in Engine.get_main_loop().get_meta('dialogic_scene_export_defaults'):
-		#return Engine.get_main_loop().get_meta('dialogic_scene_export_defaults')[node.script.resource_path]
+	if Engine.get_main_loop().has_meta('dialogic_scene_export_defaults') and \
+			node.scene_file_path in Engine.get_main_loop().get_meta('dialogic_scene_export_defaults'):
+		return Engine.get_main_loop().get_meta('dialogic_scene_export_defaults')[node.scene_file_path]
 
 	if !Engine.get_main_loop().has_meta('dialogic_scene_export_defaults'):
 		Engine.get_main_loop().set_meta('dialogic_scene_export_defaults', {})
@@ -336,7 +336,8 @@ static func get_scene_export_defaults(node: Node) -> Dictionary:
 	for i in property_info:
 		if (i['usage'] & REQUIRED_PROPERTIES) == REQUIRED_PROPERTIES:
 			defaults[i['name']] = node.get(i['name'])
-	Engine.get_main_loop().get_meta('dialogic_scene_export_defaults')[node.script.resource_path] = defaults
+	
+	Engine.get_main_loop().get_meta('dialogic_scene_export_defaults')[node.scene_file_path] = defaults
 	return defaults
 
 #endregion
