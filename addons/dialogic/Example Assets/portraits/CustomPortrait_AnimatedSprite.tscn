@@ -43,6 +43,7 @@ animations = [{
 }]
 
 [node name="CustomCharacterScene" type="Node2D"]
+position = Vector2(160, 580)
 script = ExtResource("1_63c5k")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]

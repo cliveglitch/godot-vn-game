@@ -10,12 +10,12 @@ func _show_title() -> bool:
 	return false
 
 
-func _load_portrait_data(data: Dictionary) -> void:
+func _load_portrait_data(data:Dictionary) -> void:
 	_recheck(data, true)
 
 
-func _recheck(data: Dictionary, force := false) -> void:
-	get_parent().get_child(get_index() + 1).hide()
+func _recheck(data:Dictionary, force := false) -> void:
+	get_parent().get_child(get_index()+1).hide()
 	if last_scene == data.get("scene", "") and not force:
 		current_portrait_data = data
 		last_scene = data.get("scene", "")
@@ -44,19 +44,9 @@ func load_portrait_scene_export_variables() -> void:
 		return
 
 	scene = scene.instantiate()
-	self.add_child(scene)
-
-	if not scene.is_node_ready():
-		await scene.ready
-	
-	var props_list = scene.get_property_list()
-	const REQUIRED_PROPERTIES = PROPERTY_USAGE_EDITOR | PROPERTY_USAGE_STORAGE | PROPERTY_USAGE_SCRIPT_VARIABLE
-	var skip := false
-
-	scene.queue_free()
-	
-	for i in props_list:
-		if ((i['usage'] & REQUIRED_PROPERTIES) == REQUIRED_PROPERTIES) and !skip:
+	var skip := true
+	for i in scene.script.get_script_property_list():
+		if i['usage'] & PROPERTY_USAGE_EDITOR and !skip:
 			var label := Label.new()
 			label.text = i['name'].capitalize()
 			$Grid.add_child(label)
@@ -78,7 +68,7 @@ func load_portrait_scene_export_variables() -> void:
 				skip = true
 				continue
 
-func set_export_override(property_name: String, value: String = "") -> void:
+func set_export_override(property_name:String, value:String = "") -> void:
 	var data: Dictionary = selected_item.get_metadata(0)
 	if !data.has('export_overrides'):
 		data['export_overrides'] = {}

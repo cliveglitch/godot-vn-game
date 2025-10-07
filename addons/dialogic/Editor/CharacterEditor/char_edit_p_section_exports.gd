@@ -6,25 +6,24 @@ extends DialogicCharacterEditorPortraitSection
 
 var current_portrait_data := {}
 var last_scene := ""
-var last_overrides := {}
 
 func _get_title() -> String:
 	return "Settings"
 
 
-func _load_portrait_data(data: Dictionary) -> void:
+func _load_portrait_data(data:Dictionary) -> void:
 	_recheck(data, true)
 
 
 ## Recheck section visibility and reload export fields.
 ## This allows reacting to changes of the portrait_scene setting.
-func _recheck(data: Dictionary, force := false):
-	if last_scene == data.get("scene", "") and last_overrides == data.get("export_overrides", {}) and not force:
+func _recheck(data: Dictionary, force:=false):
+	if last_scene == data.get("scene", "") and not force:
 		current_portrait_data = data
+		last_scene = data.get("scene", "")
 		return
 
 	last_scene = data.get("scene", "")
-	last_overrides = data.get("export_overrides", {}).duplicate(true)
 	current_portrait_data = data
 
 	for child in $Grid.get_children():
@@ -46,23 +45,9 @@ func _recheck(data: Dictionary, force := false):
 
 	scene = scene.instantiate()
 
-	self.add_child(scene)
-
-	for override in data.export_overrides.keys():
-		if override in scene:
-			scene.set(override, str_to_var(data.export_overrides[override]))
-
-	if not scene.is_node_ready():
-		await scene.ready
-	
-	var props_list = scene.get_property_list()
-	const REQUIRED_PROPERTIES = PROPERTY_USAGE_EDITOR | PROPERTY_USAGE_STORAGE | PROPERTY_USAGE_SCRIPT_VARIABLE
 	var skip := false
-
-	scene.queue_free()
-	
-	for i in props_list:
-		if ((i['usage'] & REQUIRED_PROPERTIES) == REQUIRED_PROPERTIES) and !skip:
+	for i in scene.script.get_script_property_list():
+		if i['usage'] & PROPERTY_USAGE_EDITOR and !skip:
 			var label := Label.new()
 			label.text = i['name'].capitalize()
 			$Grid.add_child(label)
@@ -85,16 +70,16 @@ func _recheck(data: Dictionary, force := false):
 				skip = false
 
 	if $Grid.get_child_count():
-		get_parent().get_child(get_index() - 1).show()
+		get_parent().get_child(get_index()-1).show()
 		show()
 	else:
 		hide()
-		get_parent().get_child(get_index() - 1).hide()
-		get_parent().get_child(get_index() + 1).hide()
+		get_parent().get_child(get_index()-1).hide()
+		get_parent().get_child(get_index()+1).hide()
 
 
 ## On any change, save the export override to the portrait items metadata.
-func set_export_override(property_name: String, value: String = "") -> void:
+func set_export_override(property_name:String, value:String = "") -> void:
 	var data: Dictionary = selected_item.get_metadata(0)
 	if !data.has('export_overrides'):
 		data['export_overrides'] = {}
