@@ -312,12 +312,10 @@ animations = [{
 
 [node name="Natsuhi" type="Node2D"]
 script = ExtResource("1_qcdw6")
-dialogic_name = "Natsuhi"
-currentPoseName = "A35"
-currentExpressionName = "Surprised2"
+currentPoseName = "A11"
+currentExpressionName = "Smiling1"
 
 [node name="A11" type="Node2D" parent="."]
-visible = false
 position = Vector2(0, -575)
 script = ExtResource("2_pd8t1")
 
@@ -378,6 +376,7 @@ script = ExtResource("4_cr6au")
 [node name="Mouth" type="AnimatedSprite2D" parent="A32/Surprised2"]
 position = Vector2(20, -234)
 sprite_frames = SubResource("SpriteFrames_bhs8c")
+frame_progress = 0.09237201
 
 [node name="A33" type="Node2D" parent="."]
 visible = false
@@ -391,6 +390,7 @@ script = ExtResource("4_cr6au")
 [node name="Mouth" type="AnimatedSprite2D" parent="A33/Surprised2"]
 position = Vector2(21, -234)
 sprite_frames = SubResource("SpriteFrames_4v1nv")
+frame_progress = 0.4206643
 
 [node name="A34" type="Node2D" parent="."]
 visible = false
@@ -404,8 +404,10 @@ script = ExtResource("4_cr6au")
 [node name="Mouth" type="AnimatedSprite2D" parent="A34/Surprised2"]
 position = Vector2(-137, -234)
 sprite_frames = SubResource("SpriteFrames_n48et")
+frame_progress = 0.281091
 
 [node name="A35" type="Node2D" parent="."]
+visible = false
 position = Vector2(-83, -575)
 script = ExtResource("2_pd8t1")
 
@@ -416,3 +418,4 @@ script = ExtResource("4_cr6au")
 [node name="Mouth" type="AnimatedSprite2D" parent="A35/Surprised2"]
 position = Vector2(85, -234)
 sprite_frames = SubResource("SpriteFrames_62bd4")
+frame_progress = 0.5006156
