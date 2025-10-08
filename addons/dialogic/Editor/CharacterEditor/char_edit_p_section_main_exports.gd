@@ -44,9 +44,16 @@ func load_portrait_scene_export_variables() -> void:
 		return
 
 	scene = scene.instantiate()
+	self.add_child(scene)
+
+	const REQUIRED_PROPERTIES = PROPERTY_USAGE_EDITOR | PROPERTY_USAGE_STORAGE | PROPERTY_USAGE_SCRIPT_VARIABLE
+	var property_info: Array[Dictionary] = scene.get_property_list()
 	var skip := true
-	for i in scene.script.get_script_property_list():
-		if i['usage'] & PROPERTY_USAGE_EDITOR and !skip:
+
+	scene.queue_free()
+
+	for i in property_info:
+		if (i['usage'] & REQUIRED_PROPERTIES) == REQUIRED_PROPERTIES and !skip:
 			var label := Label.new()
 			label.text = i['name'].capitalize()
 			$Grid.add_child(label)
