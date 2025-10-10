@@ -61,7 +61,7 @@ func _get_property_list() -> Array:
 	propsList.append({
 		"name": "currentPoseName",
 		"type": TYPE_STRING,
-		"usage": PROPERTY_USAGE_DEFAULT | PROPERTY_USAGE_EDITOR | PROPERTY_USAGE_SCRIPT_VARIABLE,
+		"usage": PROPERTY_USAGE_EDITOR | PROPERTY_USAGE_STORAGE | PROPERTY_USAGE_SCRIPT_VARIABLE,
 		"hint": PROPERTY_HINT_ENUM,
 		"hint_string": ",".join(Array(poseNames))
 	})
@@ -71,7 +71,7 @@ func _get_property_list() -> Array:
 	propsList.append({
 		"name": "currentExpressionName",
 		"type": TYPE_STRING,
-		"usage": PROPERTY_USAGE_DEFAULT | PROPERTY_USAGE_EDITOR | PROPERTY_USAGE_SCRIPT_VARIABLE,
+		"usage": PROPERTY_USAGE_EDITOR | PROPERTY_USAGE_STORAGE | PROPERTY_USAGE_SCRIPT_VARIABLE,
 		"hint": PROPERTY_HINT_ENUM,
 		"hint_string": ",".join(Array(localCurrentExpressions))
 	})

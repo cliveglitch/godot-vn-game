@@ -61,7 +61,7 @@ func _recheck(data: Dictionary, force:=false):
 	scene.queue_free()
 	
 	for i in property_info:
-		if (i['usage'] & REQUIRED_PROPERTIES) == REQUIRED_PROPERTIES and !skip:
+		if i['usage'] & REQUIRED_PROPERTIES == REQUIRED_PROPERTIES and !skip:
 			var label := Label.new()
 			label.text = i['name'].capitalize()
 			$Grid.add_child(label)

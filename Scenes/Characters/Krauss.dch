@@ -23,7 +23,9 @@
 "currentPoseName": "\"A12\"",
 "image": "",
 "isTalking": "false",
-"number_test": "\"Tres\""
+"number_test": "\"Tres\"",
+"randomNumber": "37.0",
+"randomText": "\"Hello\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

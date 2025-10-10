@@ -103,6 +103,7 @@ func _holding_button(value_direction: int, button: BaseButton) -> void:
 	button.focus_exited.connect(_stop_button_holding.bind(button))
 	button.mouse_exited.connect(_stop_button_holding.bind(button))
 
+	await self.ready
 	var scene_tree: SceneTree = get_tree()
 	var delay_timer_ms: int = 600
 

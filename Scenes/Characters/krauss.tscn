@@ -312,6 +312,7 @@ animations = [{
 
 [node name="Krauss" type="Node2D"]
 script = ExtResource("1_qrig0")
+randomNumber = null
 currentPoseName = "A14"
 currentExpressionName = "Smug1"
 

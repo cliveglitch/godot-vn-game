@@ -19,10 +19,14 @@
 &"portraits": {
 "Indignated/Hands Down": {
 "export_overrides": {
+"character_class": "\"Warrior\"",
 "currentExpressionName": "\"Angry1\"",
 "currentPoseName": "\"A32\"",
+"damage_type": "{}",
 "isTalking": "false",
-"number_test": "\"Uno\""
+"number_test": "\"Uno\"",
+"randomNumber": "13.0",
+"randomText": "\"Ettou\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
